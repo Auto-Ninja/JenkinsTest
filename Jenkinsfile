@@ -6,14 +6,15 @@ pipeline{
     stages{
         stage("build my code"){
             steps{
-            echo 'I am building my code'
+            echo 'I am building my code in ${BRANCH_NAME}'
             }
         }
         stage("test my code"){
                     steps{
                     echo 'I am testing my code'
                     //sh 'mvn test -Dtest=orders.OrderTest'
-                    sh 'mvn --version'
+                    bat 'mvn test -Dtest=orders.OrderTest'
+                    bat 'isUnix()'
                     }
                 }
     }
