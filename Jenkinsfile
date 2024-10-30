@@ -3,10 +3,22 @@ pipeline{
     tools{
         maven 'M2'
     }
+    environment
+    {
+        MY_VERSION = 'DEV_VERSION'
+    }
+    parameters
+        {
+            choice(name: 'VERSION',choices: ['1.2.1','1.2.2','2.1.0'])
+            booleanParam(name: 'executeTests',defaultValue:true,description:'Decide to execute test in the build')
+    pipeline {
+        parameters {
+            choice(name: 'PLATFORM_FILTER', choices: ['all', 'linux', 'windows', 'mac'], description: 'Run on specific platform')
+        }
     stages{
         stage("build my code"){
             steps{
-            echo 'I am building my code in ${BRANCH_NAME}'
+            echo "I am building my code from ${BRANCH_NAME} & ${MY_VERSION}"
             }
         }
         stage("test my code"){
