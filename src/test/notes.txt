@@ -4,3 +4,10 @@ eg:
     mvn test -Dtest="{packagename}.{classname}"
     mvn test -Dtest="orders.OrderTest"
     mvn test -Dtest="orders.OrderDetailsTest"
+
+To create a suite file xml, right click and create
+
+To run test suite file
+eg:
+    mvn clean test -DsuiteXmlFile="{file path}"
+    mvn clean test -DsuiteXmlFile="src/test/suite/shipment.xml"

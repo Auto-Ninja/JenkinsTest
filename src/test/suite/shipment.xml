@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="D:/Source/JenkinTest/src/test/java/shipment"><classes><class name="shipment.shipmentTest"><methods><include name="FirstShipment"/></methods></class></classes></test></suite>
