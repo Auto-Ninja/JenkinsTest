@@ -22,14 +22,14 @@ pipeline{
         stage("test my code"){
             when{
                 expression{
-                    executeTests == true
+                    executeTests
                 }
             }
                     steps{
                     echo 'I am testing my code'
                     //sh 'mvn test -Dtest=orders.OrderTest'
                     bat 'mvn test -Dtest=orders.OrderTest'
-                    bat 'isUnix()'
+                  
                     }
                 }
     }
