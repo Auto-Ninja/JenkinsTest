@@ -1,0 +1,6 @@
+Run command
+To run test class
+eg:
+    mvn test -Dtest="{packagename}.{classname}"
+    mvn test -Dtest="orders.OrderTest"
+    mvn test -Dtest="orders.OrderDetailsTest"
