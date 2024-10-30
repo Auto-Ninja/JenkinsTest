@@ -20,6 +20,11 @@ pipeline{
             }
         }
         stage("test my code"){
+            when{
+                expression{
+                    executeTests == true
+                }
+            }
                     steps{
                     echo 'I am testing my code'
                     //sh 'mvn test -Dtest=orders.OrderTest'
