@@ -11,9 +11,6 @@ pipeline{
         {
             choice(name: 'VERSION',choices: ['1.2.1','1.2.2','2.1.0'])
             booleanParam(name: 'executeTests',defaultValue:true,description:'Decide to execute test in the build')
-        }
-    pipeline {
-        parameters {
             choice(name: 'PLATFORM_FILTER', choices: ['all', 'linux', 'windows', 'mac'], description: 'Run on specific platform')
         }
     stages{
