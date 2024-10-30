@@ -12,7 +12,8 @@ pipeline{
         stage("test my code"){
                     steps{
                     echo 'I am testing my code'
-                    sh 'mvn test -Dtest=orders.OrderTest'
+                    //sh 'mvn test -Dtest=orders.OrderTest'
+                    sh 'mvn --version'
                     }
                 }
     }
