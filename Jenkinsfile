@@ -16,22 +16,22 @@ pipeline{
     stages{
         stage("build my code"){
             steps{
-            echo "I am building my code from ${BRANCH_NAME} & ${MY_VERSION}"
+            echo "I am building my code from ${BRANCH_NAME} & ${MY_VERSION} -- ${params.VERSION}"
             }
         }
-        stage("test my code"){
+        stage("test my code")
+        {
             when{
-                expression{
-                     params.executeTests
+                    expression{
+                        params.executeTests
+                    }
                 }
-            }
-                    steps{
+                steps{
                     echo 'I am testing my code'
                     //sh 'mvn test -Dtest=orders.OrderTest'
                     bat 'mvn test -Dtest=orders.OrderTest'
-                  
                     }
-                }
+        }
     }
 
 }
