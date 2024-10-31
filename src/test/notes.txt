@@ -11,3 +11,7 @@ To run test suite file
 eg:
     mvn clean test -DsuiteXmlFile="{file path}"
     mvn clean test -DsuiteXmlFile="src/test/suite/shipment.xml"
+
+ Report generation
+ refer: https://github.com/allure-framework/allure-maven
+ in jenkins: https://allurereport.org/docs/integrations-jenkins/
