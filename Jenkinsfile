@@ -2,6 +2,7 @@ pipeline{
     agent any
     tools{
         maven 'M2'
+        allure 'Allure226'
     }
     environment
     {
@@ -50,7 +51,7 @@ pipeline{
                         allure includeProperties:
                          false,
                          jdk: '',
-                         results: [[path: 'build/allure-results']]
+                         results: [[path: 'target/allure-results']]
                     }
                 }
 
