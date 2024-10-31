@@ -29,9 +29,21 @@ pipeline{
                 steps{
                     echo 'I am testing my code'
                     //sh 'mvn test -Dtest=orders.OrderTest'
-                    bat 'mvn test -Dtest=orders.OrderTest'
+                    bat 'mvn clean test'
                     }
         }
+        stage("publish my test results")
+                {
+                    when{
+                            expression{
+                                params.executeTests
+                            }
+                        }
+                        steps{
+                            echo 'I am testing my code'
+                            bat 'mvn allure:report'
+                            }
+                }
     }
     post {
                     always {
